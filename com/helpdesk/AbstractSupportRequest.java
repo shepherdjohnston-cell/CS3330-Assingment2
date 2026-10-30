@@ -1,3 +1,5 @@
+package com.helpdesk;
+
 public abstract class AbstractSupportRequest implements SupportRequest{
     private final int id;
     private final String title;
@@ -5,15 +7,10 @@ public abstract class AbstractSupportRequest implements SupportRequest{
     private boolean resolved;
 
     public AbstractSupportRequest(int id, String title, int basePoints){
-        if (id <= 0) {
-            throw new IllegalArgumentException("Request ID must be greater than 0.")
-        }
-        if (title == null || title.isBlank()) {
-            throw new IllegalArgumentException("Title cannot be null or blank.")
-        }
-        if (basePoints <= 0){
-            throw new IllegalArgfumentException("Base Points must be greater than 0.")
-        }
+        if (id <= 0) throw new IllegalArgumentException("Request ID must be greater than 0.");
+        if (title == null || title.isBlank())  throw new IllegalArgumentException("Title cannot be null or blank.");
+        if (basePoints <= 0) throw new IllegalArgumentException("Base Points must be greater than 0.");
+
         this.id = id;
         this.title = title;
         this.basePoints = basePoints;
@@ -21,9 +18,7 @@ public abstract class AbstractSupportRequest implements SupportRequest{
     }
 
     protected void markResolved() {
-        if (this.resolved){
-            throw new IllegalStateException("Request ID: " + id + " is already marked as resolved.")
-        }
+        if (this.resolved) throw new IllegalStateException("Request ID: " + id + " is already marked as resolved.");
     }
 
     @Override

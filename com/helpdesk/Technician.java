@@ -1,3 +1,5 @@
+package com.helpdesk;
+
 public class Technician {
     private final String name;
     private int servicePoints;

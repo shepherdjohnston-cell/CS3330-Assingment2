@@ -1,3 +1,10 @@
+package com.helpdesk;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class HelpDesk {
     private Map<Integer, SupportRequest> requestsById;
     private Map<Technician, List<SupportRequest>> assignments;
@@ -18,6 +25,7 @@ public class HelpDesk {
     }
 
     public void assignRequest(Technician technician, int requestId){
+        //DESIGN CHOICE: A request can be assigned to multiple techs, so now checking for that
         SupportRequest request = findRequest(requestId);
 
         if (request == null)  throw new IllegalArgumentException("Request does not exist.");

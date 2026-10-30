@@ -1,3 +1,5 @@
+package com.helpdesk;
+
 public interface SupportRequest {
     int getId();
     String getTitle();

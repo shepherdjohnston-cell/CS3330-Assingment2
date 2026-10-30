@@ -1,3 +1,5 @@
+package com.helpdesk;
+
 public class DeviceSetupRequest extends AbstractSupportRequest {
     private final int deviceCount;
 
