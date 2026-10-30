@@ -1,5 +1,5 @@
 public class PasswordResetRequest extends AbstractSupportRequest {
-    private String accountName
+    private final String accountName
 
     public PasswordResetRequest(int id, String title, int basePoints, String accountName){
         super(id, title, basePoints);
@@ -23,5 +23,4 @@ public class PasswordResetRequest extends AbstractSupportRequest {
     public String getAccountName() {
         return accountName;
     }
-
 }
