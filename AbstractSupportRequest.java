@@ -20,20 +20,34 @@ public abstract class AbstractSupportRequest implements SupportRequest{
         this.resolved = false;
     }
 
+    protected void markResolved() {
+        if (this.resolved){
+            throw new IllegalStateException("Request ID: " + id + " is already marked as resolved.")
+        }
+    }
 
     @Override
     public int getId(){
-        return this.id;
+        return id;
     }
 
     @Override
     public String getTitle(){
-        return this.title;
+        return title;
     }
 
     @Override
     public int getBasePoints(){
-        return this.basePoints;
+        return basePoints;
     }
 
+    @Override
+    public boolean isResolved(){
+        return resolved;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("ID: %d | Title: \"%s\" | Base Points: %d | Resolved: %s", id, title, basePoints, resolved ? "Yes" : "No");
+    }
 }
