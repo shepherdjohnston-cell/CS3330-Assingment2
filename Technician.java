@@ -3,7 +3,7 @@ public class Technician {
     private int servicePoints;
 
     public Technician(String name) {
-        if (name == NULL || name.isBlank()){
+        if (name == null || name.isBlank()){
             throw new IllegalArgumentException("Name cannot be null or blank.");
         }
 

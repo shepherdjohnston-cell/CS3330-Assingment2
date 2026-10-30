@@ -8,7 +8,7 @@ public abstract class AbstractSupportRequest implements SupportRequest{
         if (id <= 0) {
             throw new IllegalArgumentException("Request ID must be greater than 0.")
         }
-        if (title == NULL || title.isBlank()) {
+        if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("Title cannot be null or blank.")
         }
         if (basePoints <= 0){
